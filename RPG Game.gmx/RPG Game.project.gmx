@@ -14,6 +14,10 @@
     <sprite>sprites\spr_player_left</sprite>
     <sprite>sprites\spr_grass</sprite>
     <sprite>sprites\spr_player_shadow</sprite>
+    <sprite>sprites\spr_cavesoil</sprite>
+    <sprite>sprites\spr_cavedirt</sprite>
+    <sprite>sprites\spr_rock</sprite>
+    <sprite>sprites\spr_cave_sign</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_cave</background>
@@ -31,6 +35,10 @@
     <object>objects\obj_grass</object>
     <object>objects\obj_view</object>
     <object>objects\obj_dash_effect</object>
+    <object>objects\obj_cavesoil</object>
+    <object>objects\obj_cavedirt</object>
+    <object>objects\obj_rock</object>
+    <object>objects\obj_cave_sign</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_1</room>
