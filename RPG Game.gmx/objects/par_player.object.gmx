@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-10</depth>
   <persistent>0</persistent>
-  <parentName>par_player</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -35,14 +35,12 @@ yaxis = 0;
 len = 0;
 dir = 0;
 image_speed = 0
-scr_get_input();
-state = scr_move_state;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="4" ename="obj_rock">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -59,14 +57,13 @@ state = scr_move_state;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// This alarm is for the dash state
-state = scr_move_state
+            <string>/// Nothing
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="4" ename="obj_cavesoil">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -83,13 +80,37 @@ state = scr_move_state
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Move the player in step event
-script_execute(state);
+            <string>/// Nothing
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_wall">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Collide
 
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -106,75 +127,12 @@ script_execute(state);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Online Send
-if gms_info_isloggedin(){
-    gms_self_set("sprite_index",sprite_index)
-    gms_self_set("image_speed",image_speed)
-    gms_self_set("image_index",image_index)
-    gms_self_set("phy_position_x",phy_position_x)
-    gms_self_set("phy_position_y",phy_position_y)
-}
+            <string>/// Draw the shadow
+draw_sprite(spr_player_shadow, image_index, x, y);
+draw_self();
 </string>
           </argument>
         </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>226</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_next_room</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>222</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_next_room</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>225</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_previous_room</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>221</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_previous_room</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
   </events>
