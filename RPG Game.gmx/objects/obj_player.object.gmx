@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-10</depth>
   <persistent>0</persistent>
-  <parentName>par_player</parentName>
+  <parentName>obj_lifeform_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// Set fixed rotation
-phy_fixed_rotation = true;
+event_inherited();
 spd = 2;
 hspd = 0;
 vspd = 0;
@@ -84,12 +84,15 @@ state = scr_move_state
           <argument>
             <kind>1</kind>
             <string>/// Move the player in step event
+event_inherited();
 script_execute(state);
 
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="4" ename="obj_wall">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -106,13 +109,33 @@ script_execute(state);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Online Send
-if gms_info_isloggedin(){
-    gms_self_set("sprite_index",sprite_index)
-    gms_self_set("image_speed",image_speed)
-    gms_self_set("image_index",image_index)
-    gms_self_set("phy_position_x",phy_position_x)
-    gms_self_set("phy_position_y",phy_position_y)
+            <string>///Collide
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Change back to move state
+if (state == scr_attack_state) {
+    state = scr_move_state;
 }
 </string>
           </argument>
@@ -175,6 +198,31 @@ if gms_info_isloggedin(){
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Draw the shadow
+draw_sprite(spr_player_shadow, image_index, x, y);
+draw_self();
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>

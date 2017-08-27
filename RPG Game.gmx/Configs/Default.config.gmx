@@ -224,7 +224,6 @@
     <option_fullscreen>False</option_fullscreen>
     <option_gameguid>{8C56BD0D-127E-4AD9-BC82-B69DE1EDC262}</option_gameguid>
     <option_gameid>570577993</option_gameid>
-    <option_haptic_effects>0</option_haptic_effects>
     <option_hasloadimage>false</option_hasloadimage>
     <option_helpkey>true</option_helpkey>
     <option_html5_CreationEventOrder>true</option_html5_CreationEventOrder>
@@ -468,7 +467,7 @@
     <option_use_new_audio>True</option_use_new_audio>
     <option_variableerrors>False</option_variableerrors>
     <option_version>100</option_version>
-    <option_version_build>3</option_version_build>
+    <option_version_build>0</option_version_build>
     <option_version_company></option_version_company>
     <option_version_copyright></option_version_copyright>
     <option_version_description></option_version_description>
