@@ -47,9 +47,9 @@
     <object>objects\obj_cave_sign</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_init</room>
     <room>rooms\rm_1</room>
     <room>rooms\rm_2</room>
-    <room>rooms\rm_init</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
